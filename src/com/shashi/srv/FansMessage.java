@@ -28,12 +28,12 @@ public class FansMessage extends HttpServlet {
 
 		response.setContentType("text/html");
 		String htmlTextMessage = "" + "<html>" + "<body>"
-				+ "<h2 style='color:green;'>Message to Ellison Electronics</h2>" + ""
-				+ "Fans Message Received !!<br/><br/> Name: " + name + "," + "<br/><br/> Email Id: " + email
+				+ "<h2 style='color:green;'>Message to FACA Store</h2>" + ""
+				+ "Customer's Message Received !!<br/><br/> Name: " + name + "," + "<br/><br/> Email: " + email
 				+ "<br><br/>" + "Comment: " + "<span style='color:grey;'>" + comments + "</span>"
-				+ "<br/><br/>We are glad that fans are choosing us! <br/><br/>Thanks & Regards<br/><br/>Auto Generated Mail"
+				+ "<br/><br/>We are glad that one of our favotite Customer has chosen us! <br/><br/>Thanks & Regards"
 				+ "</body>" + "</html>";
-		String message = MailMessage.sendMessage("ellison.alumni@gmail.com", "Fans Message | " + name + " | " + email,
+		String message = MailMessage.sendMessage("alimbaime8@gmail.com", "Customer Message | " + name + " | " + email,
 				htmlTextMessage);
 		if ("SUCCESS".equals(message)) {
 			message = "Comments Sent Successfully";
