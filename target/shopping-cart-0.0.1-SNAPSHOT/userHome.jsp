@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.service.*,com.shashi.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
+	import="com.faca.service.impl.*,com.faca.service.*,com.faca.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ellison Electronics</title>
+<title>FACA Store</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -15,8 +15,19 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		#myNavbar .navbar-right li:nth-child(1) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+		footer{
+			margin-top: 50px !important;
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody">
 
 	<%
 	/* Checking the user credentials */
@@ -54,7 +65,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: black; font-size: 14px; font-weight: bold;"><%=message%></div>
+		style="color: black; font-size: 20px; font-weight: bold; margin-block: 1em;"><%=message%></div>
 	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
  -->
 	<!-- Start of Product Items List -->
@@ -65,11 +76,11 @@
 			for (ProductBean product : products) {
 				int cartQty = new CartServiceImpl().getCartItemCount(userName, product.getProdId());
 			%>
-			<div class="col-sm-4" style='height: 350px;'>
+			<div class="col-sm-4" style='height: 400px;'>
 				<div class="thumbnail">
 					<img src="./ShowImage?pid=<%=product.getProdId()%>" alt="Product"
 						style="height: 150px; max-width: 180px">
-					<p class="productname"><%=product.getProdName()%>
+					<p class="prodname"><%=product.getProdName()%>
 					</p>
 					<%
 					String description = product.getProdInfo();
@@ -78,10 +89,10 @@
 					<p class="productinfo"><%=description%>..
 					</p>
 					<p class="price">
-						Rs
+						XAF
 						<%=product.getProdPrice()%>
 					</p>
-					<form method="post">
+					<form method="post" id="formPost">
 						<%
 						if (cartQty == 0) {
 						%>

@@ -6,25 +6,43 @@
 <title>Register</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.navbar-nav li:nth-child(2) a {
+		color: black !important;
+		font-weight: 700;
+		}
+		section{
+		    display: flex !important;
+		    justify-content: center;
+		    align-items: center;
+		    min-height: 100vh;
+		    width: 100%;
+		    background: url('./images/2021-03-15_eCommerceCOVID19report-1-1220x675px.jpg');
+		    background-position: center;
+		    background-size: cover;
+		}
+		form{
+			justify-content: center;
+   	 		align-items: center;
+		    backdrop-filter: blur(15px);
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
-	<%@ include file="header.jsp"%>
+	<%@ include file="navBar.jsp"%>
 	<%
 	String message = request.getParameter("message");
 	%>
-	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-
+	<section>
 			<form action="./RegisterSrv" method="post"
-				class="col-md-6 col-md-offset-3"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+				class="col-md-6"
+				style="border: 2px solid black; border-radius: 10px; background-color: transparent; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<h2 style="color: green;">Registration Form</h2>
 					<%
@@ -41,43 +59,35 @@
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="first_name">Name</label> <input type="text"
-							name="username" class="form-control" id="first_name"
-							name="first_name" required>
+							name="username" class="form-control"  required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Email</label> <input type="email"
-							name="email" class="form-control" id="last_name" name="last_name"
+							name="email" class="form-control"
 							required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="last_name">Address</label>
-					<textarea name="address" class="form-control" id="last_name"
-						name="last_name" required></textarea>
+					<textarea name="address" class="form-control"
+						name="address" required></textarea>
 				</div>
 				<div class="row">
-					<div class="col-md-6 form-group">
+					<div class="col-md-12 form-group">
 						<label for="last_name">Mobile</label> <input type="number"
-							name="mobile" class="form-control" id="last_name"
-							name="last_name" required>
-					</div>
-					<div class="col-md-6 form-group">
-						<label for="last_name">Pin Code</label> <input type="number"
-							name="pincode" class="form-control" id="last_name"
-							name="last_name" required>
+							name="mobile" class="form-control"  required>
 					</div>
 
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="last_name">Password</label> <input type="password"
-							name="password" class="form-control" id="last_name"
-							name="last_name" required>
+							name="password" class="form-control"  required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Confirm Password</label> <input
 							type="password" name="confirmPassword" class="form-control"
-							id="last_name" name="last_name" required>
+							 required>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -89,10 +99,6 @@
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
-
-
-	<%@ include file="footer.html"%>
+		</section>
 </body>
 </html>

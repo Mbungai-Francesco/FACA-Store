@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.beans.*,com.shashi.service.*,java.util.*"%>
+	import="com.faca.service.impl.*,com.faca.beans.*,com.faca.service.*,java.util.*"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -15,9 +15,16 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/changes.css">
+	<link rel="stylesheet" href="css/index.css">
+<style>
+	#myNavbar li:nth-child(5) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+	}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -36,7 +43,7 @@
 	}
 	%>
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<div class="text-center"
 		style="color: green; font-size: 24px; font-weight: bold;">UnShipped
@@ -49,7 +56,7 @@
 					<tr>
 						<th>TransactionId</th>
 						<th>ProductId</th>
-						<th>User Email Id</th>
+						<th>User Email</th>
 						<th>Address</th>
 						<th>Quantity</th>
 						<th>Status</th>
@@ -108,6 +115,6 @@
 		</div>
 	</div>
 
-	<%@ include file="footer.html"%>
+	
 </body>
 </html>

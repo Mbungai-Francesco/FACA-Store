@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.service.*,com.shashi.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
+	import="com.faca.service.impl.*,com.faca.service.*,com.faca.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +10,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+	#myNavbar li:nth-child(3) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
 	<%
 	/* Checking the user credentials */
@@ -58,7 +65,7 @@
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<div class="text-center"
 		style="color: green; font-size: 24px; font-weight: bold;">Cart
@@ -134,20 +141,19 @@
 
 				<tr style="background-color: grey; color: white;">
 					<td colspan="6" style="text-align: center;">Total Amount to
-						Pay (in Rupees)</td>
+						Pay (in Francs)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%
 				if (totAmount != 0) {
 				%>
 				<tr style="background-color: grey; color: white;">
-					<td colspan="4" style="text-align: center;">
-					<td><form method="post">
+					<td colspan="4" align="center"><form method="post">
 							<button formaction="userHome.jsp"
-								style="background-color: black; color: white;">Cancel</button>
+								class="btn btn-danger">Cancel</button>
 						</form></td>
-					<td colspan="2" align="center"><form method="post">
-							<button style="background-color: blue; color: white;"
+					<td colspan="3" align="center"><form method="post">
+							<button class="btn btn-primary"
 								formaction="payment.jsp?amount=<%=totAmount%>">Pay Now</button>
 						</form></td>
 

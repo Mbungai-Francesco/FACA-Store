@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.service.*,com.shashi.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
+	import="com.faca.service.impl.*,com.faca.service.*,com.faca.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +15,35 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+	body{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 100vh;
+		    width: 100%;
+		    background: url('./images/cyber-monday-shopping-sales.jpg');
+		    background-position: center;
+		    background-size: cover;
+	}
+	section{
+		    display: flex !important;
+		    justify-content: center;
+		    align-items: center;
+		    margin-block: 5em !important;
+		}
+		form{
+			justify-content: center;
+   	 		align-items: center;
+		    backdrop-filter: blur(15px);
+		}
+		footer{
+			margin: 0 !important;
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 	<%
 	/* Checking the user credentials */
 	String utype = (String) session.getAttribute("usertype");
@@ -36,17 +63,15 @@
 	}
 	%>
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<%
 	String message = request.getParameter("message");
 	%>
-	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-			<form action="./UpdateProductSrv" method="post"
-				class="col-md-6 col-md-offset-3"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+	<section>
+		<form action="./UpdateProductSrv" method="post"
+				class="col-md-6"
+				style="border: 2px solid black; border-radius: 10px; background-color: transparent; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<div class="form-group">
 						<img src="./ShowImage?pid=<%=product.getProdId()%>"
@@ -80,21 +105,20 @@
 						%>
 						<label for="producttype">Product Type</label> <select name="type"
 							id="producttype" class="form-control" required>
-							<option value="mobile"
-								<%="mobile".equalsIgnoreCase(ptype) ? "selected" : ""%>>MOBILE</option>
-							<option value="tv"
-								<%="tv".equalsIgnoreCase(ptype) ? "selected" : ""%>>TV</option>
-							<option value="camera"
-								<%="camera".equalsIgnoreCase(ptype) ? "selected" : ""%>>CAMERA</option>
-							<option value="laptop"
-								<%="laptop".equalsIgnoreCase(ptype) ? "selected" : ""%>>LAPTOP</option>
-							<option value="tablet"
-								<%="tablet".equalsIgnoreCase(ptype) ? "selected" : ""%>>TABLET</option>
-							<option value="speaker"
-								<%="speaker".equalsIgnoreCase(ptype) ? "selected" : ""%>>SPEAKER</option>
-							<option value="other"
-								<%="other".equalsIgnoreCase(ptype) ? "selected" : ""%>>Some
-								Other Appliances</option>
+							<option value="t-shirts"
+								<%="t-shirts".equalsIgnoreCase(ptype) ? "selected" : ""%>>T-shirts</option>
+							<option value="trousers"
+								<%="trousers".equalsIgnoreCase(ptype) ? "selected" : ""%>>Trousers</option>
+							<option value="shirts"
+								<%="shirts".equalsIgnoreCase(ptype) ? "selected" : ""%>>Shirts</option>
+							<option value="gowns"
+								<%="gowns".equalsIgnoreCase(ptype) ? "selected" : ""%>>Gowns</option>
+							<option value="sports"
+								<%="sports".equalsIgnoreCase(ptype) ? "selected" : ""%>>Sports</option>
+							<option value="skirts"
+								<%="skirts".equalsIgnoreCase(ptype) ? "selected" : ""%>>Skirts</option>
+							<option value="shoes"
+								<%="shoes".equalsIgnoreCase(ptype) ? "selected" : ""%>>Shoes</option>
 						</select>
 					</div>
 				</div>
@@ -118,17 +142,16 @@
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="col-md-4" style="margin-bottom: 2px;">
+					<div class="col-md-6" style="margin-bottom: 2px;">
 						<button formaction="adminViewProduct.jsp" class="btn btn-danger">Cancel</button>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<button type="submit" class="btn btn-success">Update
 							Product</button>
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
+	</section>
 
 	<%@ include file="footer.html"%>
 </body>

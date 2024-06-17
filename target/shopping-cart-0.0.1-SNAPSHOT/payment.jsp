@@ -1,22 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.service.*,com.shashi.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
+	import="com.faca.service.impl.*,com.faca.service.*,com.faca.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Payments</title>
+<title>Payment</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+	body{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 100vh;
+		    width: 100%;
+		    background: url('./images/cyber-monday-shopping-sales.jpg');
+		    background-position: center;
+		    background-size: cover;
+	}
+	#myNavbar li:nth-child(6) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+	}
+	section{
+		    display: flex !important;
+		    justify-content: center;
+		    align-items: center;
+		    margin-block: 5em !important;
+		}
+		form{
+			justify-content: center;
+   	 		align-items: center;
+		    backdrop-filter: blur(15px);
+		}
+		footer{
+			margin: 0 !important;
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody">
 
 	<%
 	/* Checking the user credentials */
@@ -39,17 +70,14 @@
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
-	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-			<form action="./OrderServlet" method="post"
-				class="col-md-6 col-md-offset-3"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+	<section>
+		<form action="./OrderServlet" method="post"
+				class="col-md-6"
+				style="border: 2px solid black; border-radius: 10px; background-color: transparent; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<div class="form-group">
-						<img src="images/profile.jpg" alt="Payment Proceed" height="100px" />
 						<h2 style="color: green;">Credit Card Payment</h2>
 					</div>
 				</div>
@@ -63,7 +91,7 @@
 				<div class="row">
 					<div class="col-md-12 form-group">
 						<label for="last_name">Enter Credit Card Number</label> <input
-							type="number" placeholder="4242-4242-4242-4242" name="cardnumber"
+							type="number" placeholder="0000-0000-0000-0000" name="cardnumber"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>
@@ -90,13 +118,12 @@
 					<div class="col-md-6 form-group">
 						<label>&nbsp;</label>
 						<button type="submit" class="form-control btn btn-success">
-							Pay :Rs
+							Pay :XAF
 							<%=amount%></button>
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
+	</section>
 
 	<!-- ENd of Product Items List -->
 

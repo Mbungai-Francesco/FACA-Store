@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="com.shashi.service.impl.*, com.shashi.service.*"%>
+<%@ page import="com.faca.service.impl.*,com.faca.service.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -10,35 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		#myNavbar li:nth-child(1) a span{
+			margin-right: .5em;
+		}
+	</style>
 </head>
 <body style="background-color: #E6F9E6;">
-	<!--Company Header Starting  -->
-	<div class="container-fluid text-center"
-		style="margin-top: 45px; background-color: #33cc33; color: white; padding: 5px;">
-		<h2>Ellison Electronics</h2>
-		<h6>We specialize in Electronics</h6>
-		<form class="form-inline" action="index.jsp" method="get">
-			<div class="input-group">
-				<input type="text" class="form-control" size="50" name="search"
-					placeholder="Search Items" required>
-				<div class="input-group-btn">
-					<input type="submit" class="btn btn-danger" value="Search" />
-				</div>
-			</div>
-		</form>
-		<p align="center"
-			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
-			id="message"></p>
-	</div>
-	<!-- Company Header Ending -->
-
+	
+	<jsp:include page="style.jsp" />
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -46,7 +32,7 @@
 	%>
 
 	<!-- Starting Navigation Bar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -55,34 +41,50 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>FACA Store</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Login</a></li>
-					<li><a href="register.jsp">Register</a></li>
-					<li><a href="index.jsp">Products</a></li>
+					<li class="myNavbarLink"><a href="login.jsp">Login</a></li>
+					<li  class="myNavbarLink"><a href="register.jsp">Register</a></li>
+					<li  class="myNavbarLink"><a href="index.jsp">Products</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="index.jsp?type=tv">TVs</a></li>
-							<li><a href="index.jsp?type=laptop">Laptops</a></li>
-							<li><a href="index.jsp?type=camera">Camera</a></li>
-							<li><a href="index.jsp?type=speaker">Speakers</a></li>
-							<li><a href="index.jsp?type=tablet">Tablets</a></li>
+							<li><a href="index.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="index.jsp?type=shirts">Shirts</a></li>
+							<li><a href="index.jsp?type=trousers">Trousers</a></li>
+							<li><a href="index.jsp?type=gowns">Gowns</a></li>
+							<li><a href="index.jsp?type=sports">Sports</a></li>
+							<li><a href="index.jsp?type=skirts">Skirts</a></li>
+							<li><a href="index.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<!--Company Header Starting  -->
+	<div class="container-fluid text-center search"
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
+		<!-- <h2>FACA Store</h2>  -->
+		<form class="form-inline" action="index.jsp" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" size="50" name="search"
+					placeholder="Search Items" required>
+			</div>
+		</form>
+		<p align="center"
+			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			id="message"></p>
+	</div>
+	<!-- Company Header Ending -->
 	<%
 	} else if ("customer".equalsIgnoreCase(userType)) { //CUSTOMER HEADER
 
 	int notf = new CartServiceImpl().getCartCount((String) session.getAttribute("username"));
 	%>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default">
 
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -92,23 +94,24 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="userHome.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>FACA Store</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="userHome.jsp"><span
-							class="glyphicon glyphicon-home">Products</span></a></li>
+							class="glyphicon glyphicon-home"></span>Products</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="userHome.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="userHome.jsp?type=tv">TV</a></li>
-							<li><a href="userHome.jsp?type=laptop">Laptops</a></li>
-							<li><a href="userHome.jsp?type=camera">Camera</a></li>
-							<li><a href="userHome.jsp?type=speaker">Speakers</a></li>
-							<li><a href="userHome.jsp?type=tablet">Tablets</a></li>
+							<li><a href="userHome.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=shirts">Shirts</a></li>
+							<li><a href="userHome.jsp?type=trousers">Trousers</a></li>
+							<li><a href="userHome.jsp?type=gowns">Gowns</a></li>
+							<li><a href="userHome.jsp?type=sports">Sports</a></li>
+							<li><a href="userHome.jsp?type=skirts">Skirts</a></li>
+							<li><a href="userHome.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -120,12 +123,17 @@
 					<%
 					} else {
 					%>
-					<li><a href="cartDetails.jsp"
+					<li>
+					<a href="cartDetails.jsp"> <span
+							class="glyphicon glyphicon-shopping-cart"></span><%=notf%>
+					</a>
+					<!-- <a href="cartDetails.jsp"
 						style="margin: 0px; padding: 0px;" id="mycart"><i
 							data-count="<%=notf%>"
 							class="fa fa-shopping-cart fa-3x icon-white badge"
 							style="background-color: #333; margin: 0px; padding: 0px; padding-bottom: 0px; padding-top: 5px;">
-						</i></a></li>
+						</i></a> -->
+					</li>
 					<%
 					}
 					%>
@@ -136,10 +144,25 @@
 			</div>
 		</div>
 	</nav>
+	<!--Company Header Starting  -->
+	<div class="container-fluid text-center search"
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
+		<!-- <h2>FACA Store</h2>  -->
+		<form class="form-inline" action="userHome.jsp" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" size="50" name="search"
+					placeholder="Search Items" required>
+			</div>
+		</form>
+		<p align="center"
+			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			id="message"></p>
+	</div>
+	<!-- Company Header Ending -->
 	<%
 	} else { //ADMIN HEADER
 	%>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -148,7 +171,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="adminViewProduct.jsp"><span
-					class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
+					class="glyphicon glyphicon-home">&nbsp;</span>FACA Store</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
@@ -157,12 +180,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="adminViewProduct.jsp?type=mobile">Mobiles</a></li>
-							<li><a href="adminViewProduct.jsp?type=tv">Tvs</a></li>
-							<li><a href="adminViewProduct.jsp?type=laptop">Laptops</a></li>
-							<li><a href="adminViewProduct.jsp?type=camera">Camera</a></li>
-							<li><a href="adminViewProduct.jsp?type=speaker">Speakers</a></li>
-							<li><a href="adminViewProduct.jsp?type=tablet">Tablets</a></li>
+							<li><a href="adminViewProduct.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shirts">Shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=trousers">Trousers</a></li>
+							<li><a href="adminViewProduct.jsp?type=gowns">Gowns</a></li>
+							<li><a href="adminViewProduct.jsp?type=sports">Sports</a></li>
+							<li><a href="adminViewProduct.jsp?type=skirts">Skirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
 					<li><a href="shippedItems.jsp">Shipped</a></li>
@@ -183,9 +207,25 @@
 			</div>
 		</div>
 	</nav>
+	<!--Company Header Starting  -->
+	<div class="container-fluid text-center search"
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
+		<!-- <h2>FACA Store</h2>  -->
+		<form class="form-inline" action="adminViewProduct.jsp" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" size="50" name="search"
+					placeholder="Search Items" required>
+			</div>
+		</form>
+		<p align="center"
+			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			id="message"></p>
+	</div>
+	<!-- Company Header Ending -->
 	<%
 	}
 	%>
 	<!-- End of Navigation Bar -->
+	
 </body>
 </html>

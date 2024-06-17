@@ -6,24 +6,70 @@
 <title>Login</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/login.css">
+	<style>
+		.navbar-nav li:nth-child(1) a {
+		color: black !important;
+		font-weight: 700;
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
-	<%@ include file="header.jsp"%>
+	<jsp:include page="navBar.jsp" />
 
 	<%
 	String message = request.getParameter("message");
 	%>
-	<div class="container">
-		<div class="row"
+	<div class="">
+		<section>
+	        <div class="form-box">
+	            <div class="form-value">
+	                <form action="./LoginSrv" method="post" id="form-box">
+	                    <h2>Login</h2>
+	                    <%
+						if (message != null) {
+						%>
+						<p style="color: blue;">
+							<%=message%>
+						</p>
+						<%
+						}
+						%>
+	                    <div class="inputbox">
+	                        <ion-icon name="mail-outline"></ion-icon>
+	                        <input type="email" name="username" class="form-control"
+							id="last_name" required>
+	                        <label for="">Email</label>
+	                    </div>
+	                    <div class="inputbox">
+	                        <ion-icon name="lock-closed-outline"></ion-icon>
+	                        <input type="password" name="password" class="form-control"
+							id="last_name" required>
+	                        <label for="">Password</label>
+	                    </div>
+	                    <div class="selectWho">
+		                    <label for="userrole" id="loginAs">Login As</label> 
+		                    <select name="usertype" id="userrole" class="form-control" required>
+								<option value="customer" selected>CUSTOMER</option>
+								<option value="admin">ADMIN</option>
+							</select>
+	                    </div>
+	                    <br>
+	                    
+	                    <button type="submit">Login</button>
+	                </form>
+	            </div>
+	        </div>
+	    </section>
+		<!-- <div class="row"
 			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
 			<form action="./LoginSrv" method="post"
-				class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2"
+				class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2" id="form-box"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<h2 style="color: green;">Login Form</h2>
@@ -40,8 +86,8 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Username</label> <input type="email"
-							placeholder="Enter Username" name="username" class="form-control"
+						<label for="last_name">Email</label> <input type="email"
+							placeholder="Enter email" name="username" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>
@@ -67,11 +113,9 @@
 					</div>
 				</div>
 			</form>
-
 		</div>
+		 -->
 	</div>
-
-	<%@ include file="footer.html"%>
 
 </body>
 </html>

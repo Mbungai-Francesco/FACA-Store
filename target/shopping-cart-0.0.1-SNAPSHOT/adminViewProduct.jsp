@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page
-	import="com.shashi.service.impl.*, com.shashi.service.*,com.shashi.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
+	import="com.faca.service.impl.*,com.faca.service.*,com.faca.beans.*,java.util.*,javax.servlet.ServletOutputStream,java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +10,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		#myNavbar li:nth-child(1) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+		footer{
+			margin-top: 50px !important;
+		}
+	</style>
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
 	<%
 	/* Checking the user credentials */
@@ -56,34 +66,32 @@
 	}
 	%>
 
-
-
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: black; font-size: 14px; font-weight: bold;"><%=message%></div>
+		style="color: black; font-size: 20px; font-weight: bold;  margin-block: 1em;"><%=message%></div>
 	<!-- Start of Product Items List -->
-	<div class="container" style="background-color: #E6F9E6;">
+	<div class="container">
 		<div class="row text-center">
 
 			<%
 			for (ProductBean product : products) {
 			%>
-			<div class="col-sm-4" style='height: 350px;'>
+			<div class="col-sm-4" style='height: 400px;'>
 				<div class="thumbnail">
 					<img src="./ShowImage?pid=<%=product.getProdId()%>" alt="Product"
 						style="height: 150px; max-width: 180px;">
-					<p class="productname"><%=product.getProdName()%>
+					<p class="prodname"><%=product.getProdName()%>
 						(
 						<%=product.getProdId()%>
 						)
 					</p>
 					<p class="productinfo"><%=product.getProdInfo()%></p>
 					<p class="price">
-						Rs
+						XAF
 						<%=product.getProdPrice()%>
 					</p>
-					<form method="post">
+					<form method="post" id="formPost">
 						<button type="submit"
 							formaction="./RemoveProductSrv?prodid=<%=product.getProdId()%>"
 							class="btn btn-danger">Remove Product</button>
@@ -92,6 +100,7 @@
 							formaction="updateProduct.jsp?prodid=<%=product.getProdId()%>"
 							class="btn btn-primary">Update Product</button>
 					</form>
+					<br>
 				</div>
 			</div>
 
@@ -102,8 +111,6 @@
 		</div>
 	</div>
 	<!-- ENd of Product Items List -->
-
-	<%@ include file="footer.html"%>
 
 </body>
 </html>
