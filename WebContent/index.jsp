@@ -81,7 +81,7 @@
 				<div class="thumbnail">
 					<img src="./ShowImage?pid=<%=product.getProdId()%>" alt="Product"
 						style="height: 150px; max-width: 180px">
-					<p class="productname"><%=product.getProdName()%>
+					<p class="prodname"><%=product.getProdName()%>
 					</p>
 					<%
 					String description = product.getProdInfo();
@@ -93,7 +93,7 @@
 						XAF
 						<%=product.getProdPrice()%>
 					</p>
-					<form method="post">
+					<form method="post" id="formPost">
 						<%
 						if (cartQty == 0) {
 						%>

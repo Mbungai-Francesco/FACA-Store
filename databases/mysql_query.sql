@@ -190,11 +190,11 @@ COMMIT;
 -- -----------------------------------------------------
 -- Data for table `shopping-cart`.`orders`
 -- -----------------------------------------------------
-START TRANSACTION;
-USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`orders` (`orderid`, `prodid`, `quantity`, `amount`, `shipped`) VALUES ('TR10001', 'P20230423082243', 1, 125999, 0);
+-- START TRANSACTION;
+-- USE `shopping-cart`;
+-- INSERT INTO `shopping-cart`.`orders` (`orderid`, `prodid`, `quantity`, `amount`, `shipped`) VALUES ('TR10001', 'P20230423082243', 1, 125999, 0);
 
-COMMIT;
+-- COMMIT;
 
 
 -- -----------------------------------------------------
@@ -202,8 +202,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('guest@gmail.com', 'Guest User', 9876543234, 'K.P Road, Gaya, Bihar - India', 'guest');
-INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('admin@gmail.com', 'Admin User', 9876543459, 'ABC Colony, Newtown, West Bengal', 'admin');
+INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('guest@gmail.com', 'Guest User', 699565632, 'Mokolo, Yaounde - Cameroon', 'guest');
+INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('admin@gmail.com', 'Admin User', 685858563, 'Barrier, Yaounde Cameroon', 'admin');
 
 COMMIT;
 
@@ -211,29 +211,29 @@ COMMIT;
 -- -----------------------------------------------------
 -- Data for table `shopping-cart`.`transactions`
 -- -----------------------------------------------------
-START TRANSACTION;
-USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`transactions` (`transid`, `username`, `time`, `amount`) VALUES ('TR10001', 'guest@gmail.com', '2023-04-23 09:26:56', 125999);
+-- START TRANSACTION;
+-- USE `shopping-cart`;
+-- INSERT INTO `shopping-cart`.`transactions` (`transid`, `username`, `time`, `amount`) VALUES ('TR10001', 'guest@gmail.com', '2023-04-23 09:26:56', 125999);
 
-COMMIT;
+-- COMMIT;
 
 
 -- -----------------------------------------------------
 -- Data for table `shopping-cart`.`user_demand`
 -- -----------------------------------------------------
-START TRANSACTION;
-USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`user_demand` (`username`, `prodid`, `quantity`) VALUES ('guest@gmail.com', 'P20230423084144', 3);
+-- START TRANSACTION;
+-- USE `shopping-cart`;
+-- INSERT INTO `shopping-cart`.`user_demand` (`username`, `prodid`, `quantity`) VALUES ('guest@gmail.com', 'P20230423084144', 3);
 
-COMMIT;
+-- COMMIT;
 
 
 -- -----------------------------------------------------
 -- Data for table `shopping-cart`.`usercart`
 -- -----------------------------------------------------
-START TRANSACTION;
-USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`usercart` (`username`, `prodid`, `quantity`) VALUES ('guest@gmail.com', 'P20230423082243', 2);
+-- START TRANSACTION;
+-- USE `shopping-cart`;
+-- INSERT INTO `shopping-cart`.`usercart` (`username`, `prodid`, `quantity`) VALUES ('guest@gmail.com', 'P20230423082243', 2);
 
-COMMIT;
+-- COMMIT;
 

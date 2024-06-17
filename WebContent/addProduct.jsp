@@ -96,10 +96,13 @@
 					<div class="col-md-6 form-group">
 						<label for="producttype">Product Type</label> <select name="type"
 							id="producttype" class="form-control" required>
-							<option value="shirts">T-shirts</option>
+							<option value="t-shirts">T-shirts</option>
+							<option value="shirts">Shirts</option>
 							<option value="trousers">Trousers</option>
 							<option value="gowns">Gowns</option>
 							<option value="sports">Sports</option>
+							<option value="skirts">Skirts</option>
+							<option value="shoes">Shoes</option>
 						</select>
 					</div>
 				</div>

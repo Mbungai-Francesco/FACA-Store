@@ -52,15 +52,33 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="index.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="index.jsp?type=shirts">Shirts</a></li>
 							<li><a href="index.jsp?type=trousers">Trousers</a></li>
 							<li><a href="index.jsp?type=gowns">Gowns</a></li>
 							<li><a href="index.jsp?type=sports">Sports</a></li>
+							<li><a href="index.jsp?type=skirts">Skirts</a></li>
+							<li><a href="index.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<!--Company Header Starting  -->
+	<div class="container-fluid text-center search"
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
+		<!-- <h2>FACA Store</h2>  -->
+		<form class="form-inline" action="index.jsp" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" size="50" name="search"
+					placeholder="Search Items" required>
+			</div>
+		</form>
+		<p align="center"
+			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			id="message"></p>
+	</div>
+	<!-- Company Header Ending -->
 	<%
 	} else if ("customer".equalsIgnoreCase(userType)) { //CUSTOMER HEADER
 
@@ -87,10 +105,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="userHome.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=shirts">Shirts</a></li>
 							<li><a href="userHome.jsp?type=trousers">Trousers</a></li>
 							<li><a href="userHome.jsp?type=gowns">Gowns</a></li>
 							<li><a href="userHome.jsp?type=sports">Sports</a></li>
+							<li><a href="userHome.jsp?type=skirts">Skirts</a></li>
+							<li><a href="userHome.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -123,6 +144,21 @@
 			</div>
 		</div>
 	</nav>
+	<!--Company Header Starting  -->
+	<div class="container-fluid text-center search"
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
+		<!-- <h2>FACA Store</h2>  -->
+		<form class="form-inline" action="userHome.jsp" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" size="50" name="search"
+					placeholder="Search Items" required>
+			</div>
+		</form>
+		<p align="center"
+			style="color: blue; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"
+			id="message"></p>
+	</div>
+	<!-- Company Header Ending -->
 	<%
 	} else { //ADMIN HEADER
 	%>
@@ -144,10 +180,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=shirts">T-shirts</a></li>
-							<li><a href="index.jsp?type=trousers">Trousers</a></li>
-							<li><a href="index.jsp?type=gowns">Gowns</a></li>
-							<li><a href="index.jsp?type=sports">Sports</a></li>
+							<li><a href="adminViewProduct.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shirts">Shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=trousers">Trousers</a></li>
+							<li><a href="adminViewProduct.jsp?type=gowns">Gowns</a></li>
+							<li><a href="adminViewProduct.jsp?type=sports">Sports</a></li>
+							<li><a href="adminViewProduct.jsp?type=skirts">Skirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
 					<li><a href="shippedItems.jsp">Shipped</a></li>
@@ -168,16 +207,11 @@
 			</div>
 		</div>
 	</nav>
-	<%
-	}
-	%>
-	<!-- End of Navigation Bar -->
-	
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center search"
 		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
 		<!-- <h2>FACA Store</h2>  -->
-		<form class="form-inline" action="index.jsp" method="get">
+		<form class="form-inline" action="adminViewProduct.jsp" method="get">
 			<div class="input-group">
 				<input type="text" class="form-control" size="50" name="search"
 					placeholder="Search Items" required>
@@ -188,5 +222,10 @@
 			id="message"></p>
 	</div>
 	<!-- Company Header Ending -->
+	<%
+	}
+	%>
+	<!-- End of Navigation Bar -->
+	
 </body>
 </html>

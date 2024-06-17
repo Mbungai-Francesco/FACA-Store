@@ -91,7 +91,7 @@
 						XAF
 						<%=product.getProdPrice()%>
 					</p>
-					<form method="post">
+					<form method="post" id="formPost">
 						<button type="submit"
 							formaction="./RemoveProductSrv?prodid=<%=product.getProdId()%>"
 							class="btn btn-danger">Remove Product</button>
@@ -100,6 +100,7 @@
 							formaction="updateProduct.jsp?prodid=<%=product.getProdId()%>"
 							class="btn btn-primary">Update Product</button>
 					</form>
+					<br>
 				</div>
 			</div>
 

@@ -54,10 +54,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="index.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="index.jsp?type=shirts">Shirts</a></li>
 							<li><a href="index.jsp?type=trousers">Trousers</a></li>
 							<li><a href="index.jsp?type=gowns">Gowns</a></li>
 							<li><a href="index.jsp?type=sports">Sports</a></li>
+							<li><a href="index.jsp?type=skirts">Skirts</a></li>
+							<li><a href="index.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -89,10 +92,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="userHome.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=shirts">Shirts</a></li>
 							<li><a href="userHome.jsp?type=trousers">Trousers</a></li>
 							<li><a href="userHome.jsp?type=gowns">Gowns</a></li>
 							<li><a href="userHome.jsp?type=sports">Sports</a></li>
+							<li><a href="userHome.jsp?type=skirts">Skirts</a></li>
+							<li><a href="userHome.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -146,10 +152,13 @@
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="adminViewProduct.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=t-shirts">T-shirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shirts">Shirts</a></li>
 							<li><a href="adminViewProduct.jsp?type=trousers">Trousers</a></li>
 							<li><a href="adminViewProduct.jsp?type=gowns">Gowns</a></li>
 							<li><a href="adminViewProduct.jsp?type=sports">Sports</a></li>
+							<li><a href="adminViewProduct.jsp?type=skirts">Skirts</a></li>
+							<li><a href="adminViewProduct.jsp?type=shoes">Shoes</a></li>
 						</ul></li>
 					<li><a href="adminStock.jsp">Stock</a></li>
 					<li><a href="shippedItems.jsp">Shipped</a></li>

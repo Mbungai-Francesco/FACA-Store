@@ -33,11 +33,6 @@
 	#myCard{
 		border-radius: 50px !important;
 	}
-	.prodname{
-		color : blue;
-		font-size: 15px;
-		font-weight: 500;
-	}
 	.navbar-nav li a:hover {
 	color: black !important;
 	font-weight: 700;
@@ -61,6 +56,25 @@
 		background-color: #9b9898;
 		border: 0;
 		color: white;
+	}
+	.prodname{
+		color: black !important;
+		font-weight: 500 !important;
+		font-size: 15px !important;
+	}
+	.productinfo{
+		font-weight: 500 !important;
+		color: #00000091 !important;
+	}
+	.price{
+		color: black !important;
+		font-weight: bold !important;
+		font-size: 20px !important;
+	}
+	.thumbnail{
+		border: none!important;
+		border-radius: 10px !important;
+		box-shadow: 0px 0px 10px #8b8b8b96;
 	}
 </style>
 </head>
