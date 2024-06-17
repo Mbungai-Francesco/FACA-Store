@@ -18,6 +18,11 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+		#myNavbar li:nth-child(1) a span{
+			margin-right: .5em;
+		}
+	</style>
 </head>
 <body style="background-color: #E6F9E6;">
 	<jsp:include page="style.jsp" />
@@ -79,7 +84,7 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="userHome.jsp"><span
-							class="glyphicon glyphicon-home">Products</span></a></li>
+							class="glyphicon glyphicon-home"></span> Products</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
@@ -99,12 +104,17 @@
 					<%
 					} else {
 					%>
-					<li><a href="cartDetails.jsp"
+					<li>
+					<a href="cartDetails.jsp"> <span
+							class="glyphicon glyphicon-shopping-cart"></span><%=notf%>
+					</a>
+					<!-- <a href="cartDetails.jsp"
 						style="margin: 0px; padding: 0px;" id="mycart"><i
 							data-count="<%=notf%>"
 							class="fa fa-shopping-cart fa-3x icon-white badge"
 							style="background-color: #333; margin: 0px; padding: 0px; padding-bottom: 0px; padding-top: 5px;">
-						</i></a></li>
+						</i></a> -->
+					</li>
 					<%
 					}
 					%>

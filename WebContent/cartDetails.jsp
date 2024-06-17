@@ -10,7 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -18,6 +17,13 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+	#myNavbar li:nth-child(3) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+</style>
 </head>
 <body id="mainBody" >
 
@@ -59,7 +65,7 @@
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<div class="text-center"
 		style="color: green; font-size: 24px; font-weight: bold;">Cart
@@ -135,7 +141,7 @@
 
 				<tr style="background-color: grey; color: white;">
 					<td colspan="6" style="text-align: center;">Total Amount to
-						Pay (in Rupees)</td>
+						Pay (in Francs)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%

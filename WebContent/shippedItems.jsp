@@ -7,12 +7,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin Home</title>
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+	#myNavbar li:nth-child(4) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+	}
+	</style>
 </head>
 <body id="mainBody" >
 	<%

@@ -16,6 +16,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.navbar-nav li:nth-child(3) a {
+		color: black !important;
+		font-weight: 700;
+		}
+	</style>
 </head>
 <body id="mainBody">
 
@@ -57,7 +63,7 @@
 	
 
 	<div class="text-center"
-		style="color: black; font-size: 14px; font-weight: bold;"><%=message%></div>
+		style="color: black; font-size: 20px; font-weight: bold; margin-block: 1em;"><%=message%></div>
 	<div class="text-center" id="message"
 		style="color: black; font-size: 14px; font-weight: bold;"></div>
 	<!-- Start of Product Items List -->

@@ -33,7 +33,7 @@ public class FansMessage extends HttpServlet {
 				+ "<br><br/>" + "Comment: " + "<span style='color:grey;'>" + comments + "</span>"
 				+ "<br/><br/>We are glad that one of our favotite Customer has chosen us! <br/><br/>Thanks & Regards"
 				+ "</body>" + "</html>";
-		String message = MailMessage.sendMessage("mbungaifrancesco2@gmail.com", "Customer Message | " + name + " | " + email,
+		String message = MailMessage.sendMessage("isifacastore1@gmail.com", "Customer Message | " + name + " | " + email,
 				htmlTextMessage);
 		if ("SUCCESS".equals(message)) {
 			message = "Comments Sent Successfully";

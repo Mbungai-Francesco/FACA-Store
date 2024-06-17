@@ -15,6 +15,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		#myNavbar li:nth-child(1) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+	</style>
 </head>
 <body id="mainBody" >
 
@@ -59,7 +66,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: black; font-size: 14px; font-weight: bold;"><%=message%></div>
+		style="color: black; font-size: 20px; font-weight: bold;  margin-block: 1em;"><%=message%></div>
 	<!-- Start of Product Items List -->
 	<div class="container">
 		<div class="row text-center">

@@ -8,6 +8,19 @@
 <title>Logout Header</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		#myNavbar li:nth-child(1) a span{
+			margin-right: .5em;
+		}
+	</style>
 </head>
 <body style="background-color: #E6F9E6;">
 	
@@ -32,9 +45,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Login</a></li>
-					<li><a href="register.jsp">Register</a></li>
-					<li><a href="index.jsp">Products</a></li>
+					<li class="myNavbarLink"><a href="login.jsp">Login</a></li>
+					<li  class="myNavbarLink"><a href="register.jsp">Register</a></li>
+					<li  class="myNavbarLink"><a href="index.jsp">Products</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
@@ -69,15 +82,15 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="userHome.jsp"><span
-							class="glyphicon glyphicon-home">Products</span></a></li>
+							class="glyphicon glyphicon-home"></span>Products</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Category <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="index.jsp?type=shirts">T-shirts</a></li>
-							<li><a href="index.jsp?type=trousers">Trousers</a></li>
-							<li><a href="index.jsp?type=gowns">Gowns</a></li>
-							<li><a href="index.jsp?type=sports">Sports</a></li>
+							<li><a href="userHome.jsp?type=shirts">T-shirts</a></li>
+							<li><a href="userHome.jsp?type=trousers">Trousers</a></li>
+							<li><a href="userHome.jsp?type=gowns">Gowns</a></li>
+							<li><a href="userHome.jsp?type=sports">Sports</a></li>
 						</ul></li>
 					<%
 					if (notf == 0) {
@@ -89,12 +102,17 @@
 					<%
 					} else {
 					%>
-					<li><a href="cartDetails.jsp"
+					<li>
+					<a href="cartDetails.jsp"> <span
+							class="glyphicon glyphicon-shopping-cart"></span><%=notf%>
+					</a>
+					<!-- <a href="cartDetails.jsp"
 						style="margin: 0px; padding: 0px;" id="mycart"><i
 							data-count="<%=notf%>"
 							class="fa fa-shopping-cart fa-3x icon-white badge"
 							style="background-color: #333; margin: 0px; padding: 0px; padding-bottom: 0px; padding-top: 5px;">
-						</i></a></li>
+						</i></a> -->
+					</li>
 					<%
 					}
 					%>
@@ -157,7 +175,7 @@
 	
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center search"
-		style=" color: white; padding: 5px; border: 0;">
+		style=" color: white; padding: 5px; border: 0; margin-top:1em;">
 		<!-- <h2>FACA Store</h2>  -->
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">

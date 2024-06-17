@@ -11,14 +11,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/changes.css">
 <link rel="stylesheet" href="css/index.css">
 </head>
 <body style="background-color: #E6F9E6;">
 	<!-- Start the footer Contacts -->
 	<!-- <a name="contact"></a> -->
+	<jsp:include page="style.jsp" />
 	<div class="container-fluid"
-		style="background-color: #454545; color: white; margin-top: 200px;">
+		style="background-color: #454545; color: white; margin-top: 400px;">
 		<div class="container">
 			<h3 class="text-center">Contact</h3>
 			<p class="text-center">
@@ -35,7 +35,7 @@
 					</p>
 					<p>
 						<span class="glyphicon glyphicon-envelope"></span> Email:
-						faca@gmail.com
+						isifacastore1@gmail.com
 					</p>
 					<p>
 						<span class="glyphicon glyphicon-copyright-mark"></span>
@@ -58,7 +58,7 @@
 							placeholder="Comment" rows="5" required></textarea>
 						<div class="row">
 							<div class="col-md-12 form-group">
-								<button class="btn pull-right" type="submit">Send</button>
+								<button class="btn pull-right" type="submit" id="customerSendBtn">Send</button>
 							</div>
 						</div>
 					</form>

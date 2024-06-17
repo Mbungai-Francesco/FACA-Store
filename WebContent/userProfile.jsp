@@ -10,7 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -18,6 +17,13 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/index.css">
+	<style>
+	#myNavbar li:nth-child(5) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+</style>
 </head>
 <body id="mainBody">
 
@@ -34,12 +40,12 @@
 	UserService dao = new UserServiceImpl();
 	UserBean user = dao.getUserDetails(userName, password);
 	if (user == null)
-		user = new UserBean("Test User", 98765498765L, "test@gmail.com", "ABC colony, Patna, bihar", 87659, "lksdjf");
+		user = new UserBean("Test User", 98765498765L, "test@gmail.com", "Douala, Forche, Mbungai", "lksdjf");
 	%>
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<div class="container bg-secondary">
 		<div class="row">
@@ -123,15 +129,6 @@
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">PinCode</p>
-							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getPinCode()%>
-								</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

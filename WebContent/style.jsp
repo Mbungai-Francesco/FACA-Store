@@ -41,7 +41,7 @@
 	.navbar-nav li a:hover {
 	color: black !important;
 	font-weight: 700;
-}
+	}
 	.navbar{
 	margin: 0 !important;
 	}
@@ -49,6 +49,18 @@
 	border-radius: 20px !important;
 	border: 0;
 	box-shadow: 0px 5px 5px #0202022e;
+	}
+	#comments{
+		margin-bottom: .7em !important;
+	}
+	#customerSendBtn{
+		background-color: #bab5b5;
+		border: 0;
+	}
+	#customerSendBtn:hover{
+		background-color: #9b9898;
+		border: 0;
+		color: white;
 	}
 </style>
 </head>

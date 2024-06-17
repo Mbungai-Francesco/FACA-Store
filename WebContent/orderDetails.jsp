@@ -14,8 +14,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/changes.css">
 <link rel="stylesheet" href="css/index.css">
+<style>
+	#myNavbar li:nth-child(4) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+		}
+</style>
 </head>
 <body id="mainBody" >
 
@@ -36,7 +42,7 @@
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
  -->

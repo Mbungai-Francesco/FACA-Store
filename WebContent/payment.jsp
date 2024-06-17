@@ -10,7 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -40,7 +39,7 @@
 
 
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<div class="container">
 		<div class="row"
@@ -64,7 +63,7 @@
 				<div class="row">
 					<div class="col-md-12 form-group">
 						<label for="last_name">Enter Credit Card Number</label> <input
-							type="number" placeholder="4242-4242-4242-4242" name="cardnumber"
+							type="number" placeholder="0000-0000-0000-0000" name="cardnumber"
 							class="form-control" id="last_name" required>
 					</div>
 				</div>
@@ -91,7 +90,7 @@
 					<div class="col-md-6 form-group">
 						<label>&nbsp;</label>
 						<button type="submit" class="form-control btn btn-success">
-							Pay :Rs
+							Pay :XAF
 							<%=amount%></button>
 					</div>
 				</div>

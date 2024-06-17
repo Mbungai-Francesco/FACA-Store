@@ -16,7 +16,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/changes.css">
+<style>
+	#myNavbar li:nth-child(5) a {
+		color: black !important;
+		font-weight: 700  !important;
+		font-style: 'Poppins' !important;
+	}
+	</style>
 </head>
 <body id="mainBody" >
 	<%
