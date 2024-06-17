@@ -23,6 +23,9 @@
 		font-weight: 700  !important;
 		font-style: 'Poppins' !important;
 		}
+		footer{
+			margin-top: 50px !important;
+		}
 </style>
 </head>
 <body id="mainBody">

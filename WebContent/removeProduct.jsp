@@ -14,11 +14,34 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/index.css">
 	<style>
+	body{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 100vh;
+		    width: 100%;
+		    background: url('./images/cyber-monday-shopping-sales.jpg');
+		    background-position: center;
+		    background-size: cover;
+	}
 	#myNavbar li:nth-child(6) a {
 		color: black !important;
 		font-weight: 700  !important;
 		font-style: 'Poppins' !important;
 	}
+	section{
+		    display: flex !important;
+		    justify-content: center;
+		    align-items: center;
+		}
+		form{
+			justify-content: center;
+   	 		align-items: center;
+		    backdrop-filter: blur(15px);
+		}
+		footer{
+			margin: 0 !important;
+		}
 	</style>
 </head>
 <body id="mainBody" >
@@ -46,12 +69,9 @@
 	<%
 	String message = request.getParameter("message");
 	%>
-	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-			<form action="./RemoveProductSrv" method="post"
-				class="col-md-4 col-md-offset-4"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+	<section>
+		<form action="./RemoveProductSrv" method="post"
+				class="col-md-4" style="border: 2px solid black; border-radius: 10px; background-color: transparent; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<h3 style="color: green;">Product Deletion Form</h3>
 					<%
@@ -82,9 +102,7 @@
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
-
+	</section>
 	<%@ include file="footer.html"%>
 </body>
 </html>

@@ -21,6 +21,9 @@
 		font-weight: 700  !important;
 		font-style: 'Poppins' !important;
 		}
+		footer{
+			margin-top: 50px !important;
+		}
 	</style>
 </head>
 <body id="mainBody" >
@@ -74,7 +77,7 @@
 			<%
 			for (ProductBean product : products) {
 			%>
-			<div class="col-sm-4" style='height: 350px;'>
+			<div class="col-sm-4" style='height: 400px;'>
 				<div class="thumbnail">
 					<img src="./ShowImage?pid=<%=product.getProdId()%>" alt="Product"
 						style="height: 150px; max-width: 180px;">

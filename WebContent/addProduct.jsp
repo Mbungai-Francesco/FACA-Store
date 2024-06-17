@@ -14,11 +14,35 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/index.css">
 <style>
+	body{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 100vh;
+		    width: 100%;
+		    background: url('./images/cyber-monday-shopping-sales.jpg');
+		    background-position: center;
+		    background-size: cover;
+	}
 	#myNavbar li:nth-child(6) a {
 		color: black !important;
 		font-weight: 700  !important;
 		font-style: 'Poppins' !important;
 	}
+	section{
+		    display: flex !important;
+		    justify-content: center;
+		    align-items: center;
+		    margin-block: 5em !important;
+		}
+		form{
+			justify-content: center;
+   	 		align-items: center;
+		    backdrop-filter: blur(15px);
+		}
+		footer{
+			margin: 0 !important;
+		}
 	</style>
 </head>
 <body id="mainBody" >
@@ -46,12 +70,10 @@
 	<%
 	String message = request.getParameter("message");
 	%>
-	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-			<form action="./AddProductSrv" method="post"
-				enctype="multipart/form-data" class="col-md-6 col-md-offset-3"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
+	<section>
+		<form action="./AddProductSrv" method="post"
+				enctype="multipart/form-data" class="col-md-6"
+				style="border: 2px solid black; border-radius: 10px; background-color: transparent; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<h2 style="color: green;">Product Addition Form</h2>
 					<%
@@ -113,8 +135,7 @@
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
+	</section>
 
 	<%@ include file="footer.html"%>
 </body>
