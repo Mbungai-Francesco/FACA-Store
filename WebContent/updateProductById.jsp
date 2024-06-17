@@ -17,7 +17,7 @@
 	body{
 		display:flex;
 		flex-direction: column;
-		justify-content: space-between;
+		
 		min-height: 100vh;
 		    width: 100%;
 		    background: url('./images/cyber-monday-shopping-sales.jpg');
@@ -33,6 +33,7 @@
 		    display: flex !important;
 		    justify-content: center;
 		    align-items: center;
+		    height: 70vh;
 		}
 		form{
 			justify-content: center;
@@ -102,6 +103,6 @@
 			</form>
 	</section>
 
-	<%@ include file="footer.html"%>
+	
 </body>
 </html>

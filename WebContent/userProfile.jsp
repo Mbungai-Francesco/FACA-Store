@@ -67,8 +67,7 @@
 			<div class="col-lg-4">
 				<div class="card mb-4">
 					<div class="card-body text-center">
-						<img src="images/profile.jpg" class="rounded-circle img-fluid"
-							style="width: 150px;">
+						
 						<h5 class="my-3">
 							Hello
 							<%=user.getName()%>

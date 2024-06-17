@@ -148,13 +148,12 @@
 				if (totAmount != 0) {
 				%>
 				<tr style="background-color: grey; color: white;">
-					<td colspan="4" style="text-align: center;">
-					<td><form method="post">
+					<td colspan="4" align="center"><form method="post">
 							<button formaction="userHome.jsp"
-								style="background-color: black; color: white;">Cancel</button>
+								class="btn btn-danger">Cancel</button>
 						</form></td>
-					<td colspan="2" align="center"><form method="post">
-							<button style="background-color: blue; color: white;"
+					<td colspan="3" align="center"><form method="post">
+							<button class="btn btn-primary"
 								formaction="payment.jsp?amount=<%=totAmount%>">Pay Now</button>
 						</form></td>
 
