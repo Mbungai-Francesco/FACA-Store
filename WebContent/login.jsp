@@ -11,10 +11,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
-	<%@ include file="header.jsp"%>
+	<jsp:include page="navBar.jsp" />
 
 	<%
 	String message = request.getParameter("message");
@@ -40,8 +41,8 @@
 				<div></div>
 				<div class="row">
 					<div class="col-md-12 form-group">
-						<label for="last_name">Username</label> <input type="email"
-							placeholder="Enter Username" name="username" class="form-control"
+						<label for="last_name">Email</label> <input type="email"
+							placeholder="Enter email" name="username" class="form-control"
 							id="last_name" required>
 					</div>
 				</div>
@@ -70,8 +71,6 @@
 
 		</div>
 	</div>
-
-	<%@ include file="footer.html"%>
 
 </body>
 </html>

@@ -12,9 +12,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/changes.css">
+<link rel="stylesheet" href="css/index.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -34,7 +34,7 @@
 	}
 	%>
 
-	<jsp:include page="header.jsp" />
+	<jsp:include page="navBar.jsp" />
 
 	<%
 	String message = request.getParameter("message");
@@ -67,13 +67,10 @@
 					<div class="col-md-6 form-group">
 						<label for="producttype">Product Type</label> <select name="type"
 							id="producttype" class="form-control" required>
-							<option value="mobile">MOBILE</option>
-							<option value="tv">TV</option>
-							<option value="camera">CAMERA</option>
-							<option value="laptop">LAPTOP</option>
-							<option value="tablet">TABLET</option>
-							<option value="speaker">SPEAKER</option>
-							<option value="other">Some Other Appliances</option>
+							<option value="shirts">T-shirts</option>
+							<option value="trousers">Trousers</option>
+							<option value="gowns">Gowns</option>
+							<option value="sports">Sports</option>
 						</select>
 					</div>
 				</div>

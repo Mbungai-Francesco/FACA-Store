@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `shopping-cart`.`user` (
   `name` VARCHAR(30) NULL DEFAULT NULL,
   `mobile` BIGINT NULL DEFAULT NULL,
   `address` VARCHAR(250) NULL DEFAULT NULL,
-  `pincode` INT NULL DEFAULT NULL,
   `password` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`email`))
 ENGINE = InnoDB
@@ -203,8 +202,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `shopping-cart`;
-INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `pincode`, `password`) VALUES ('guest@gmail.com', 'Guest User', 9876543234, 'K.P Road, Gaya, Bihar - India', 879767, 'guest');
-INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `pincode`, `password`) VALUES ('admin@gmail.com', 'Admin User', 9876543459, 'ABC Colony, Newtown, West Bengal', 786890, 'admin');
+INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('guest@gmail.com', 'Guest User', 9876543234, 'K.P Road, Gaya, Bihar - India', 'guest');
+INSERT INTO `shopping-cart`.`user` (`email`, `name`, `mobile`, `address`, `password`) VALUES ('admin@gmail.com', 'Admin User', 9876543459, 'ABC Colony, Newtown, West Bengal', 'admin');
 
 COMMIT;
 

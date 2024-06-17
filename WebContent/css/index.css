@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+body{
+	font-family: 'Poppins' !important;
+}
+#mainBody{
+		background-color: #ffffff !important;
+	}
+#myCard{
+	border-radius: 50px !important;
+}
+.prodname{
+	color: blue;
+}

@@ -11,10 +11,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body id="mainBody" >
 
-	<%@ include file="header.jsp"%>
+	<%@ include file="navBar.jsp"%>
 	<%
 	String message = request.getParameter("message");
 	%>
@@ -41,43 +42,35 @@
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="first_name">Name</label> <input type="text"
-							name="username" class="form-control" id="first_name"
-							name="first_name" required>
+							name="username" class="form-control"  required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Email</label> <input type="email"
-							name="email" class="form-control" id="last_name" name="last_name"
+							name="email" class="form-control"
 							required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="last_name">Address</label>
-					<textarea name="address" class="form-control" id="last_name"
-						name="last_name" required></textarea>
+					<textarea name="address" class="form-control"
+						name="address" required></textarea>
 				</div>
 				<div class="row">
-					<div class="col-md-6 form-group">
+					<div class="col-md-12 form-group">
 						<label for="last_name">Mobile</label> <input type="number"
-							name="mobile" class="form-control" id="last_name"
-							name="last_name" required>
-					</div>
-					<div class="col-md-6 form-group">
-						<label for="last_name">Pin Code</label> <input type="number"
-							name="pincode" class="form-control" id="last_name"
-							name="last_name" required>
+							name="mobile" class="form-control"  required>
 					</div>
 
 				</div>
 				<div class="row">
 					<div class="col-md-6 form-group">
 						<label for="last_name">Password</label> <input type="password"
-							name="password" class="form-control" id="last_name"
-							name="last_name" required>
+							name="password" class="form-control"  required>
 					</div>
 					<div class="col-md-6 form-group">
 						<label for="last_name">Confirm Password</label> <input
 							type="password" name="confirmPassword" class="form-control"
-							id="last_name" name="last_name" required>
+							 required>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -92,7 +85,5 @@
 		</div>
 	</div>
 
-
-	<%@ include file="footer.html"%>
 </body>
 </html>
